@@ -13,5 +13,6 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "no-multiple-empty-lines": [2, {max: 2, maxEOF: 10}]
   }
 }
