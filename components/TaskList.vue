@@ -58,9 +58,9 @@ export default {
                     break
                 }
             }
+            this.tasks = this.getTasks.filter((item) => item.checked === false)
         }
     }
-
 }
 </script>
 
