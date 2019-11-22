@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Task List</h3>
-        <div v-for="item in taskList" :key="item.id">
+        <div v-for="item in tasks" :key="item.id">
             <v-checkbox v-model="checkbox"></v-checkbox>
             <h4>{{item.name}}</h4>
             <p>{{item.description}}</p>
@@ -23,9 +23,24 @@ export default {
     // }
 
     // checkbox binding will be either false or true
-    data: function () {
+    data: () => {
         return {
-            taskList : this.$store.state.tasks
+            // why would the below code spit error ? (cannot access store with anonymous function)
+            // tasks : this.$store.state.tasks,
+            tasks: [
+                {
+                'id': 0,
+                'name': 'create repo',
+                'description': 'Make sure to install Vuex & Vuetify',
+                'checked': false
+                },
+                {
+                'id': 1,
+                'name': 'Create Task list component',
+                'description': 'Allow user to check and un-check',
+                'checked': false
+                }
+            ]
         }
     }
 
