@@ -1,8 +1,17 @@
 <template>
     <div>
     <h3>Task Form</h3>
-    <v-form>
-        <v-text-field></v-text-field>
+     <v-form>
+    <v-container>
+        <v-row>
+            <v-col cols="12">
+                <v-text-field label="Task name"></v-text-field>
+            </v-col>
+            <v-col cols="12">
+                <v-textarea label="Task description"></v-textarea>
+            </v-col>
+        </v-row>
+    </v-container>
     </v-form>
     </div>
 </template>
