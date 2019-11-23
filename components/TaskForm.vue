@@ -10,6 +10,9 @@
             <v-col cols="12">
                 <v-textarea label="Task description" v-model="taskDescription"></v-textarea>
             </v-col>
+            <v-col cols="6">
+                <v-btn color="success">Submit</v-btn>
+            </v-col>
         </v-row>
     </v-container>
     </v-form>
