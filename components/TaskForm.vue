@@ -11,7 +11,7 @@
                 <v-textarea label="Task description" v-model="taskDescription"></v-textarea>
             </v-col>
             <v-col cols="6">
-                <v-btn color="success" @click="formTaskObject">Submit</v-btn>
+                <v-btn color="success" @click="emitToParent">Submit</v-btn>
             </v-col>
         </v-row>
     </v-container>
@@ -23,8 +23,8 @@
 export default {
     data: () => {
         return {
-            counter: 0,
             taskObj: {
+                // id propery is currently empty
                 id: '',
                 name: '',
                 description: '',
@@ -54,6 +54,9 @@ export default {
     },
     // is it correct that we store function that does not require to capture the changes to data?
     methods: {
+        emitToParent (event) {
+            this.$emit('childToParent', this.taskObj)
+        }
     }
 }
 </script>
