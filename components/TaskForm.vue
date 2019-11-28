@@ -24,8 +24,6 @@ export default {
     data: () => {
         return {
             counter: 0,
-            name: 'aaa',
-            description: '',
             taskObj: {
                 id: '',
                 name: '',
@@ -39,30 +37,18 @@ export default {
             // when put in this form, I get 'cannot find property "name"' => why?
             // () => () {}
             set: function (value) {
-                    this.name = value
+                    this.taskObj.name = value
                 },
             get: function () {
-                    return this.name
+                    return this.taskObj.name
                 }
         },
         taskDescription: {
             set: function (value) {
-                    this.description = value
+                    this.taskObj.description = value
             },
             get: function () {
-                    return this.description
-            }
-        },
-        formTaskObject: {
-            set: function () {
-                this.taskObj.id = this.counter
-                this.taskObj.name = this.name
-                this.taskObj.description = this.description
-                counter++
-                console.log(this.taskObj)
-            },
-            get: function () {
-                return this.taskObj
+                    return this.taskObj.description
             }
         }
     },
