@@ -19,6 +19,7 @@ export default {
         return {
             // why would the below code spit error ? (cannot access store with anonymous function)
             // tasks : this.$store.state.tasks,
+            // => You do not store $store inside the data property
             tasks: [
                 {
                 'id': 0,
@@ -39,6 +40,7 @@ export default {
     computed: {
         getTasks () {
             // getting the reference of the original data, but is this necesarry ? 
+            // => Computed property will allow Vue Engine to keep track of its state
             return this.tasks
         }
     },
