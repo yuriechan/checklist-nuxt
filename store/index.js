@@ -14,14 +14,12 @@ export const state = () => ({
       'checked': false
     }
   ]
-
-  // getters: {
-  //   Tasks: (state) => {
-  //     return state.tasks
-  //   }
-  // }
-
-  // changing state should be done by commiting a mutation
-  // mutation: {
-  // }
 })
+
+export const getters = {
+
+}
+
+export const mutations = {
+
+}
