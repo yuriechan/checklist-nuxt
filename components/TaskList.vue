@@ -6,6 +6,7 @@
             <h4>{{item.name}}</h4>
             <p>{{item.description}}</p>
         </div>
+        <div v-if="newTask" v-html="newTask"></div>
     </div>
 </template>
 
@@ -15,6 +16,7 @@ export default {
     // Methods inside the `computed` will be cached, while they will not inside `methods`
 
     // checkbox binding will be either false or true
+    props:['newTask'],
     data: () => {
         return {
             // why would the below code spit error ? (cannot access store with anonymous function)
