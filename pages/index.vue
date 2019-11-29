@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6 />
-    <TaskList />
+    <TaskList :newTask="newTask"/>
     <TaskForm v-on:childToParent="onChildClick"/>
   </v-layout>
 </template>
@@ -12,7 +12,7 @@ import TaskForm from '../components/TaskForm'
 export default {
   data () {
     return {
-      fromChild: ''
+      newTask: ''
     }
   },
   components: {
@@ -21,8 +21,8 @@ export default {
   },
   methods: {
     onChildClick(value) {
-      this.fromChild = value
-      console.log(this.fromChild)
+      this.newTask = value
+      console.log(this.newTask)
     }
   }
 }
