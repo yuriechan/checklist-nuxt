@@ -54,8 +54,13 @@ export default {
     },
     // is it correct that we store function that does not require to capture the changes to data?
     methods: {
+        clearInput () {
+            this.taskObj.name = null
+            this.taskObj.description = null
+        },
         emitToParent (event) {
             this.$emit('childToParent', {...this.taskObj})
+            this.clearInput()
         }
     }
 }
