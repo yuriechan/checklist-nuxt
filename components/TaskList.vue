@@ -1,12 +1,11 @@
 <template>
     <div>
         <h3>Task List</h3>
-        <div v-for="item in getTasks" :key="item.id">
+        <div v-for="item in newTask" :key="item.id">
             <v-checkbox v-model="item.checked" @change="updateTask(item)"></v-checkbox>
             <h4>{{item.name}}</h4>
             <p>{{item.description}}</p>
         </div>
-        <div v-if="newTask" v-html="newTask"></div>
     </div>
 </template>
 
@@ -17,35 +16,7 @@ export default {
 
     // checkbox binding will be either false or true
     props:['newTask'],
-    data: () => {
-        return {
-            // why would the below code spit error ? (cannot access store with anonymous function)
-            // tasks : this.$store.state.tasks,
-            // => You do not store $store inside the data property
-            tasks: [
-                {
-                'id': 0,
-                'name': 'create repo',
-                'description': 'Make sure to install Vuex & Vuetify',
-                'checked': false
-                },
-                {
-                'id': 1,
-                'name': 'Create Task list component',
-                'description': 'Allow user to check and un-check',
-                'checked': false
-                }
-            ]
-        }
-    },
     // get data from the original source to mutate later
-    computed: {
-        getTasks () {
-            // getting the reference of the original data, but is this necesarry ? 
-            // => Computed property will allow Vue Engine to keep track of its state
-            return this.tasks
-        }
-    },
     methods: {
         updateTask (inTask) {
             for (const task of this.getTasks) {
