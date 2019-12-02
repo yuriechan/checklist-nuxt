@@ -25,7 +25,7 @@ export default {
         return {
             taskObj: {
                 // id propery is currently empty
-                id: '',
+                id: null,
                 name: '',
                 description: '',
                 checked: false
@@ -55,7 +55,7 @@ export default {
     // is it correct that we store function that does not require to capture the changes to data?
     methods: {
         emitToParent (event) {
-            this.$emit('childToParent', this.taskObj)
+            this.$emit('childToParent', {...this.taskObj})
         }
     }
 }
