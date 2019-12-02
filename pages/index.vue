@@ -12,7 +12,7 @@ import TaskForm from '../components/TaskForm'
 export default {
   data () {
     return {
-      newTask: ''
+      newTask: []
     }
   },
   components: {
@@ -21,8 +21,7 @@ export default {
   },
   methods: {
     onChildClick(value) {
-      this.newTask = value
-      console.log(this.newTask)
+      this.newTask.push(value)
     }
   }
 }
